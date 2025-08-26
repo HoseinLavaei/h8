@@ -1,5 +1,5 @@
 # h8 CPU architecture
-## _A modern - bit CPU architecture_
+## _A modern 8-bit CPU architecture_
 
 h8 is a modern 8bit CPU architecture built from scratch to solve modern little issues. It is from H CPU family made by H foundation.
 

@@ -1,0 +1,102 @@
+// NOTE: The first letter of a register's name shows the size of the register. Look at the table below for information about sizes. Flags don't have any prefixes, but they use the suffix "F."
+//  _________________________________________________________________
+// |  e : 8 , x : 16 , r : 32 , h :64 , f : 128 , z : 256 , q : 512  |
+//  _________________________________________________________________
+
+
+// There are eight named "General-purpose" registers named:
+ea: The A 8-bit register
+eb: The B 8-bit register
+ec: The C 8-bit register
+ed: The D 8-bit register
+ee: The E 8-bit register
+ef: The F 8-bit register
+xg: The G 16-bit register (used for memory access and other things)
+exg0: The first 8-bit of xg
+exg1: The second 8-bit of xg
+xh: The H 16-bit register (used for memory access and other things)
+exh0: The first 8-bit of xh
+exh1: The second 8-bit of xh
+
+// There are two "Pointer" registers named:
+xsp: The stack pointer 16-bit register (points to the top of the stack)
+exsp0: The first 8-bit of xsp
+exsp1: The second 8-bit of xsp
+xip: The instruction pointer 16-bit register (points to the next instruction that will be executed)
+exip0: The first 8-bit of xip
+exip1: The second 8-bit of xip
+
+// There are four "control" registers named:
+xpfa: Page fault address 16-bit register (stores the address of the last page that caused a page fault)
+expfa0: The first 8-bit of xpfa
+expfa1: The second 8-bit of xpfa
+xpd: Page directory 16-bit register (points to the address of the page directory)
+expd0: The first 8-bit of xpd
+expd1: The second 8-bit of xpd
+etp: Task priority 8-bit register (only interrupts with priority greater than this register's value are delivered)
+emb: The memory bank 8-bit register (stores which memory bank the system is accessing)
+
+// There are two "System table" registers named:
+xidt: Interrupt descriptor table 16-bit register (points to the interrupt descriptor table which stores 16-bit pointers to the interrupt tasks)
+exidt0: The first 8-bit of xidt
+exidt1: The second 8-bit of xidt
+xidtl: Interrupt descriptor table limit 16-bit register (size of the interrupt descriptor table minus 1)
+exidtl0: The first 8-bit of xidtl
+exidtl1: The second 8-bit of xidtl
+
+// There are six "Floating-point" registers named:
+xmm0: The first 16-bit floating-point register
+exmm00: The first 8-bit of xmm0
+exmm01: The second 8-bit of xmm0
+xmm1: The second 16-bit floating-point register
+exmm10: The first 8-bit of xmm1
+exmm11: The second 8-bit of xmm1
+xmm2: The third 16-bit floating-point register
+exmm20: The first 8-bit of xmm2
+exmm21: The second 8-bit of xmm2
+xmm3: The fourth 16-bit floating-point register
+exmm30: The first 8-bit of xmm3
+exmm31: The second 8-bit of xmm3
+rmm0: The first 32-bit floating-point register
+xrmm00: The first 16-bit of rmm0
+xrmm01: The second 16-bit of rmm0
+ermm00: The first 8-bit of rmm0
+ermm01: The second 8-bit of rmm0
+ermm02: The third 8-bit of rmm0
+ermm03: The fourth 8-bit of rmm0
+rmm1: The second 32-bit floating-point register
+xrmm10: The first 16-bit of rmm1
+xrmm11: The second 16-bit of rmm1
+ermm10: The first 8-bit of rmm1
+ermm11: The second 8-bit of rmm1
+ermm12: The third 8-bit of rmm1
+ermm13: The fourth 8-bit of rmm1
+
+// There are sixteen named "Flag" registers named (these bits are all in a register named xflag):
+CF: Carry flag (Set if an unsigned operation generates a borrow, clear otherwise)
+OF: Overflow flag (Set if a signed operation generates an overflow, clear otherwise)
+SF: Sign flag (Set if a signed operation result is negative, clear otherwise)
+ZF: Zero flag (Set if an operation result is zero, clear otherwise)
+AF: Adjust flag (Set if an unsigned operation generates a half carry, clear otherwise)
+TF: Trap flag (Set to allow single-step debugging, clear otherwise)
+IF: Interrupt Flag (Set to enable interrupts, clear otherwise)
+DF: Direction flag (set to move strings backward, clear for forward)
+WF: Write-protect flag (if set, you can't write to read-only memory pages)
+GEF: Greater or Equal flag (if last comparing operation's result is "Greater" or "Equal")
+GF: Greater flag (if last comparing operation's result is "Greater" set, clear otherwise)
+EF: Equal flag (if last comparing operation's result is "Equal" set, clear otherwise)
+LF: Less flag (if last comparing operation's result is "Less" set, clear otherwise)
+LEF: Less or Equal flag (if last comparing operation's result is "Less" or "Equal" set, clear otherwise)
+// access mode is 2-bit flag which makes 4 access modes. 0: kernel mode. 1: root mode. 2: user mode. 3: vm mode.
+AMF0: Access mode flag 0
+AMF1: Access mode flag 1
+
+// There are eight "General-purpose" flags named with numbers (these bits are all in a register named egflag):
+F0
+F1
+F2
+F3
+F4
+F5
+F6
+F7

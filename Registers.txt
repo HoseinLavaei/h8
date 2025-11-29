@@ -82,13 +82,13 @@ TF: Trap flag (Set to allow single-step debugging, clear otherwise)
 IF: Interrupt Flag (Set to enable interrupts, clear otherwise)
 DF: Direction flag (set to move strings backward, clear for forward)
 WPF: Write-protect flag (if set, you can't write to read-only memory pages)
+// Note: These flags can't be changed manually
 GEF: Greater or Equal flag (if last comparing operation's result is "Greater" or "Equal")
 GF: Greater flag (if last comparing operation's result is "Greater" set, clear otherwise)
 EF: Equal flag (if last comparing operation's result is "Equal" set, clear otherwise)
-IXF: InExact flag (if last operation's result is rounded set, clear otherwise)')
+IXF: InExact flag (if last operation's result is rounded set, clear otherwise)
 EXF: Exception flag (if last operation has resulted in raising any exception)
-// NOTE: The processor doesn't set or clear these flags, it just checks if they are set or not. The assembler sets or clears'
-// These two flags or not of GEF and GF and are handled by the assembler not the processor
+// These two flags are NOT of GEF and GF and are handled by the assembler not the processor
 LF: Less flag (if last comparing operation's result is "Less" set, clear otherwise)
 LEF: Less or Equal flag (if last comparing operation's result is "Less" or "Equal" set, clear otherwise)
 // Access mode is 2-bit flag that makes four access modes. 0: kernel mode. 1: root mode. 2: user mode. 3: vm mode. These flags can be changed manually, with instructions

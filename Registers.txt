@@ -87,14 +87,17 @@ GEF: Greater or Equal flag (if last comparing operation's result is "Greater" or
 GF: Greater flag (if last comparing operation's result is "Greater" set, clear otherwise)
 EF: Equal flag (if last comparing operation's result is "Equal" set, clear otherwise)
 IXF: InExact flag (if last operation's result is rounded set, clear otherwise)
-EXF: Exception flag (if last operation has resulted in raising any exception)
-// These two flags are NOT of GEF and GF and are handled by the assembler not the processor
+ENDF: Endian-ness flag (big endian if set, little endian if clear)
 LF: Less flag (if last comparing operation's result is "Less" set, clear otherwise)
 LEF: Less or Equal flag (if last comparing operation's result is "Less" or "Equal" set, clear otherwise)
 // Access mode is 2-bit flag that makes four access modes. 0: kernel mode. 1: root mode. 2: user mode. 3: vm mode. These flags can be changed manually, with instructions
 AMF0: Access mode flag 0
 AMF1: Access mode flag 1
 // Alternatively you can change the 2-bit register named AMF
+
+
+// There are x exception flags
+
 
 
 // There are eight "General-purpose" flags named with numbers (these bits are all in a register named egflag):

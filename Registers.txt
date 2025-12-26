@@ -1,8 +1,7 @@
 // NOTE: The first letter of a register's name shows the size of the register. Look at the table below for information about sizes. Flags don't have any prefixes, but they use the suffix "F."
 //  _________________________________________________________________
 // |  e : 8 , x : 16 , r : 32 , h :64 , f : 128 , z : 256 , q : 512  |
-//  _________________________________________________________________
-
+// |_________________________________________________________________|
 
 // There are eight named "General-purpose" registers named:
 ea: The A 8-bit register

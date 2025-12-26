@@ -106,7 +106,7 @@ F5
 F6
 F7
 
-// There are x exception flags
+// There are 8 exception flags
 ZDEF: Division by zero exception flag (The last operation caused a division by zero)
 AMEF: Access mode exception flag (The last operation wanted access to a higher level access mode than the current one)
 IEEF: Interrupt error exception flag (The last interrupt caused an error)

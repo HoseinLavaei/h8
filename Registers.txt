@@ -82,23 +82,20 @@ TF: Trap flag (Set to allow single-step debugging, clear otherwise)
 IF: Interrupt Flag (Set to enable interrupts, clear otherwise)
 DF: Direction flag (set to move strings backward, clear for forward)
 WPF: Write-protect flag (if set, you can't write to read-only memory pages)
-// Note: These flags can't be changed manually
 GEF: Greater or Equal flag (if last comparing operation's result is "Greater" or "Equal")
 GF: Greater flag (if last comparing operation's result is "Greater" set, clear otherwise)
 EF: Equal flag (if last comparing operation's result is "Equal" set, clear otherwise)
-IXF: InExact flag (if last operation's result is rounded set, clear otherwise)
-ENDF: Endian-ness flag (big endian if set, little endian if clear)
 LF: Less flag (if last comparing operation's result is "Less" set, clear otherwise)
 LEF: Less or Equal flag (if last comparing operation's result is "Less" or "Equal" set, clear otherwise)
-// Access mode is 2-bit flag that makes four access modes. 0: kernel mode. 1: root mode. 2: user mode. 3: vm mode. These flags can be changed manually, with instructions
+IXF: InExact flag (if last operation's result is rounded set, clear otherwise)
+ENF: Endian-ness flag (big endian if set, little endian if clear)
+ZDF: Allow Zero-division flag (if set, division by zero is allowed and returns infinity(the biggest number possible))
+FF: Floor flag (if set, always rounds down to the lesser number for integer arithmetic operations)
+
+// Access mode is a 2-bit flag that makes four access modes. 0: kernel mode. 1: root mode. 2: user mode. 3: vm mode. These flags can be changed manually, with instructions
 AMF0: Access mode flag 0
 AMF1: Access mode flag 1
-// Alternatively you can change the 2-bit register named AMF
-
-
-// There are x exception flags
-
-
+// Alternatively, you can change the 2-bit register named AMF
 
 // There are eight "General-purpose" flags named with numbers (these bits are all in a register named egflag):
 F0
@@ -109,3 +106,13 @@ F4
 F5
 F6
 F7
+
+// There are x exception flags
+ZDEF: Division by zero exception flag (The last operation caused a division by zero)
+AMEF: Access mode exception flag (The last operation wanted access to a higher level access mode than the current one)
+IEEF: Interrupt error exception flag (The last interrupt caused an error)
+MBEF: Memory bank exception flag (The memory bank the last operation tried to access was not available)
+IIEF: Invalid instruction exception flag (The last instruction code does not exist)
+IREF: Invalid register exception flag (The last operation tried to access a register that does not exist)
+IOEF: Invalid operation exception flag (The last operation tried to do an invalid operation. eg: infinity - infinity)
+MREF: Memory reference exception flag (The last operation tried to access a memory address that does not exist in the current memory bank)
